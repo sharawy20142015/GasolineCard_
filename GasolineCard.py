@@ -54,7 +54,9 @@ user_input_number = st.text_input('ارقام المعدة')
 
 reason=st.text_area('ادخل السبب')
 insert=st.button('حفظ')
-row=[area,user_input_letter,user_input_number,vendor,reason]
+date=datetime.now()
+date=date.strftime('%d-%m-%Y')
+row=[date,area,user_input_letter,user_input_number,vendor,reason]
 if insert:
     worksheet.append_row(row)
     st.write('تم حفظ الطلب')
